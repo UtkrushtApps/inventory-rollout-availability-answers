@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-api
+  namespace: cartforge
+  labels:
+    app.kubernetes.io/name: inventory-api
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: inventory-api
+    app.kubernetes.io/component: api
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http
+      protocol: TCP

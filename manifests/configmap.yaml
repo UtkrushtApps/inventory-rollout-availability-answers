@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-api-config
+  namespace: cartforge
+  labels:
+    app.kubernetes.io/name: inventory-api
+data:
+  SERVICE_NAME: inventory-api
+  WAREHOUSE: north-america-primary
+  WARMUP_SECONDS: "4"
+  REQUEST_SECONDS: "0.35"
+  SHUTDOWN_DELAY_SECONDS: "3"
